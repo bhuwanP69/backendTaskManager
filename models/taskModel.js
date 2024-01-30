@@ -7,6 +7,6 @@ const TasksSchema = new Schema({
         type:String,
         required:true
     }
-},{timestamps:true})
+})
 
 module.exports = mongoose.model('Tasks',TasksSchema)

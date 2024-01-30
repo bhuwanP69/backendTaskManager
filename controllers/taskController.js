@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 //get all tasks
 const getTask = async(req,res) =>{
-    const allTasks = await Tasks.find({}).sort({createdAt: 1})
+    const allTasks = await Tasks.find({}).sort()
     res.status(200).json(allTasks)
 }
 
