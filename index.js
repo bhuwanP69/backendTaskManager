@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
@@ -12,9 +13,10 @@ app.use(cors())
 //middleware
 app.use(express.json())
 
-//body parser 
+//body parser  middleware easier to handle post and put request  
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
+
 
 app.use((req,res,next) =>{
   console.log(req.path,req.method)
@@ -22,7 +24,6 @@ app.use((req,res,next) =>{
 })
 
 app.use('/',taskRoutes)
-
 
 //Database
   mongoose.connect(process.env.MONGO_URI)
